@@ -11,8 +11,9 @@ interface CardProps {
 export default function Card({ children, className = '' }: CardProps) {
   return (
     <motion.div
-      className={`group relative bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:border-purple-500/30 ${className}`}
-      whileHover={{ y: -4 }}
+      className={`group relative bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl p-6 overflow-hidden transition-colors duration-300 hover:border-purple-500/30 ${className}`}
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       {/* Glow Effect on Hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
